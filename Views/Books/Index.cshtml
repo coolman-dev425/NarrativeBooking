@@ -1,0 +1,285 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using WebApplication1.Identity
+@using WebApplication1.Helper;
+@inject SignInManager<User> SignInManager
+@model List<WebApplication1.Models.Book>
+
+@{
+    ViewBag.Title = "BookStore";
+    Layout = "~/Views/Shared/_LayoutPageIndex.cshtml";
+}
+
+
+
+<!-- <div class="ratings-grid-index">
+    <img src="~/images/ratingsGrid.svg" alt="narrrative" class="ratings-size" />
+</div>
+-->
+
+<div class="index-title-group"><img src="~/images/NarrativLogosW.svg" class="index-view-logo" /><span class="index-title media-title">Open Market</span></div>
+
+<form class="form-inline" action="/books/Index">
+    <div class="search-middle landing-top">
+        <div class="center-search">
+            <p for="search" class="search-title">Search</p>
+            <input type="search" class="form-control search-items" id="search" name="search" placeholder="Details or Synopsis Excerpts" value="@ViewBag.search" />
+            <button type="submit" class="btn dark btn-outline sbold uppercase" id="btnSubmit">Go</button>
+        </div>
+        <div class="genre-msg">Have a genre selected (that has listings) to see results.</div>
+    </div>
+    <table class="table-margin">
+        <tr>
+            <th>
+                <div class="title-width">
+                    @if (ViewBag.SortOrder == "down")
+                    {
+                        <a href="/books/index?Genre1=@ViewBag.Genre1&Genre2=@ViewBag.Genre2&SortColumn=BookTitle&SortOrder=up&PageNo=1" class="index-headers">Title</a>
+                    }
+                    else
+                    {
+                        <a href="/books/index?Genre1=@ViewBag.Genre1&Genre2=@ViewBag.Genre2&SortColumn=BookTitle&SortOrder=down&PageNo=1" class="index-headers">Title</a>
+                    }
+                </div>
+            </th>
+            <th class="media-grid">
+                <div class="rate-width">
+                    <a href="#" class="index-headers">Rate</a>
+                </div>
+            </th>
+            <th class="media-grid">
+                <div class="author-width">
+                    @if (ViewBag.SortOrder == "down")
+                    {
+                        <a href="/books/index?Genre1=@ViewBag.Genre1&Genre2=@ViewBag.Genre2&SortColumn=BookAuthor&SortOrder=up&PageNo=1" class="index-headers">Author</a>
+                    }
+                    else
+                    {
+                        <a href="/books/index?Genre1=@ViewBag.Genre1&Genre2=@ViewBag.Genre2&SortColumn=BookAuthor&SortOrder=down&PageNo=1" class="index-headers">Author</a>
+                    }
+                </div>
+            </th>
+            <th class="media-grid">
+                @if (ViewBag.SortOrder == "down")
+                {
+                    <a href="/books/index?Genre1=@ViewBag.Genre1&Genre2=@ViewBag.Genre2&SortColumn=MaturityRating&SortOrder=up&PageNo=1" class="index-headers">Maturity</a>
+                }
+                else
+                {
+                    <a href="/books/index?Genre1=@ViewBag.Genre1&Genre2=@ViewBag.Genre2&SortColumn=MaturityRating&SortOrder=down&PageNo=1" class="index-headers">Maturity</a>
+                }
+            </th>
+            <th>
+                <select name="Genre1" id="Genre1" onchange="GenreChanged()" class="genre-selector">
+                    <option @((ViewBag.Genre1 == "0" || ViewBag.Genre1 == "") ? "selected=selected" : "") value="0">Genre One Not Selected</option>
+                    <option @(ViewBag.Genre1 == "Action/Sports/War" ? "selected=selected" : "") value="Action/Sports/War">Action/Sports/War</option>
+                    <option @(ViewBag.Genre1 == "Adventure" ? "selected=selected" : "") value="Adventure">Adventure</option>
+                    <option @(ViewBag.Genre1 == "Business Fiction" ? "selected=selected" : "") value="Business Fiction">Business Fiction</option>
+                    <option @(ViewBag.Genre1 == "College Student" ? "selected=selected" : "") value="College Student">College/Student</option>
+                    <option @(ViewBag.Genre1 == "Commercial" ? "selected=selected" : "") value="Commercial">Commercial</option>
+                    <option @(ViewBag.Genre1 == "Contemporary" ? "selected=selected" : "") value="Contemporary">Contemporary</option>
+                    <option @(ViewBag.Genre1 == "Crime/Cultural/Humanities" ? "selected=selected" : "") value="Crime/Cultural/Humanities">Crime/Cultural/Humanities</option>
+                    <option @(ViewBag.Genre1 == "Family" ? "selected=selected" : "") value="Family">Family</option>
+                    <option @(ViewBag.Genre1 == "Fantasy" ? "selected=selected" : "") value="Fantasy">Fantasy</option>
+                    <option @(ViewBag.Genre1 == "General Fiction" ? "selected=selected" : "") value="General Fiction">General Fiction</option>
+                    <option @(ViewBag.Genre1 == "Historical/Time Period" ? "selected=selected" : "") value="Historical/Time Period">Historical/Time-Period</option>
+                    <option @(ViewBag.Genre1 == "Horror" ? "selected=selected" : "") value="Horror">Horror</option>
+                    <option @(ViewBag.Genre1 == "Mystery" ? "selected=selected" : "") value="Mystery">Mystery</option>
+                    <option @(ViewBag.Genre1 == "Romanticism/Romance" ? "selected=selected" : "") value="Romanticism/Romance">Romanticism/Romance</option>
+                    <option @(ViewBag.Genre1 == "Rural" ? "selected=selected" : "") value="Rural">Rural</option>
+                    <option @(ViewBag.Genre1 == "Suspense" ? "selected=selected" : "") value="Suspense">Suspense</option>
+                    <option @(ViewBag.Genre1 == "Scientific/Medical-Fiction" ? "selected=selected" : "") value="Scientific/Medical-Fiction">Scientific/Medical-Fiction</option>
+                    <option @(ViewBag.Genre1 == "Sci-Fi/Fantasy" ? "selected=selected" : "") value="Sci-Fi/Fantasy">Sci-Fi/Fantasy</option>
+                    <option @(ViewBag.Genre1 == "Supernatural" ? "selected=selected" : "") value="Supernatural">Supernatural</option>
+                    <option @(ViewBag.Genre1 == "Thriller" ? "selected=selected" : "") value="Thriller">Thriller</option>
+                    <option @(ViewBag.Genre1 == "Urban" ? "selected=selected" : "") value="Urban">Urban</option>
+                    <option @(ViewBag.Genre1 == "Visceral" ? "selected=selected" : "") value="Visceral">Visceral</option>
+                    <option @(ViewBag.Genre1 == "Young Adult/Light Reading" ? "selected=selected" : "") value="Young Adult/Light Reading">Young Adult/Light Reading</option>
+                </select>
+            </th>
+            <th>
+                <select name="Genre2" id="Genre2" onchange="GenreChanged()" class="genre-selector">
+                    <option @((ViewBag.Genre2 == "0" || ViewBag.Genre2 == "") ? "selected=selected" : "") value="0">Genre Two Not Selected</option>
+                    <option @(ViewBag.Genre2 == "Action/Sports/War" ? "selected=selected" : "") value="Action/Sports/War">Action/Sports/War</option>
+                    <option @(ViewBag.Genre2 == "Adventure" ? "selected=selected" : "") value="Adventure">Adventure</option>
+                    <option @(ViewBag.Genre2 == "Business Fiction" ? "selected=selected" : "") value="Business Fiction">Business Fiction</option>
+                    <option @(ViewBag.Genre2 == "College Student" ? "selected=selected" : "") value="College Student">College/Student</option>
+                    <option @(ViewBag.Genre2 == "Commercial" ? "selected=selected" : "") value="Commercial">Commercial</option>
+                    <option @(ViewBag.Genre2 == "Contemporary" ? "selected=selected" : "") value="Contemporary">Contemporary</option>
+                    <option @(ViewBag.Genre2 == "Crime/Cultural/Humanities" ? "selected=selected" : "") value="Crime/Cultural/Humanities">Crime/Cultural/Humanities</option>
+                    <option @(ViewBag.Genre2 == "Family" ? "selected=selected" : "") value="Family">Family</option>
+                    <option @(ViewBag.Genre1 == "Fantasy" ? "selected=selected" : "") value="Fantasy">Fantasy</option>
+                    <option @(ViewBag.Genre2 == "General Fiction" ? "selected=selected" : "") value="General Fiction">General Fiction</option>
+                    <option @(ViewBag.Genre2 == "Historical/Time Period" ? "selected=selected" : "") value="Historical/Time Period">Historical/Time-Period</option>
+                    <option @(ViewBag.Genre2 == "Horror" ? "selected=selected" : "") value="Horror">Horror</option>
+                    <option @(ViewBag.Genre2 == "Mystery" ? "selected=selected" : "") value="Mystery">Mystery</option>
+                    <option @(ViewBag.Genre2 == "Romanticism/Romance" ? "selected=selected" : "") value="Romanticism/Romance">Romanticism/Romance</option>
+                    <option @(ViewBag.Genre2 == "Rural" ? "selected=selected" : "") value="Rural">Rural</option>
+                    <option @(ViewBag.Genre2 == "Suspense" ? "selected=selected" : "") value="Suspense">Suspense</option>
+                    <option @(ViewBag.Genre2 == "Scientific/Medical-Fiction" ? "selected=selected" : "") value="Scientific/Medical-Fiction">Scientific/Medical-Fiction</option>
+                    <option @(ViewBag.Genre2 == "Sci-Fi/Fantasy" ? "selected=selected" : "") value="Sci-Fi/Fantasy">Sci-Fi/Fantasy</option>
+                    <option @(ViewBag.Genre2 == "Supernatural" ? "selected=selected" : "") value="Supernatural">Supernatural</option>
+                    <option @(ViewBag.Genre2 == "Thriller" ? "selected=selected" : "") value="Thriller">Thriller</option>
+                    <option @(ViewBag.Genre2 == "Urban" ? "selected=selected" : "") value="Urban">Urban</option>
+                    <option @(ViewBag.Genre2 == "Visceral" ? "selected=selected" : "") value="Visceral">Visceral</option>
+                    <option @(ViewBag.Genre2 == "Young Adult/Light Reading" ? "selected=selected" : "") value="Young Adult/Light Reading">Young Adult/Light Reading</option>
+                </select>
+            </th>
+            <th class="index-headers white media-grid">
+                <div class="title-width">
+                    @if (ViewBag.SortOrder == "down")
+                    {
+                        <a href="/books/index?Genre1=@ViewBag.Genre1&Genre2=@ViewBag.Genre2&SortColumn=WritingType&SortOrder=up&PageNo=1" class="index-headers">WritingType</a>
+                    }
+                    else
+                    {
+                        <a href="/books/index?Genre1=@ViewBag.Genre1&Genre2=@ViewBag.Genre2&SortColumn=WritingType&SortOrder=down&PageNo=1" class="index-headers">WritingType</a>
+                    }
+                </div>
+            </th>
+            <th class="index-headers white synopsis-padding">Synopsis</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            var id_list = "";
+            var no = Model.IndexOf(item);
+            id_list = id_list + item.BookId;
+            <tr>
+                <td><a href="/books/details/@item.BookId" class="title-color title-width">@item.BookTitle</a></td>
+                <td class="media-grid">
+                    <input type="hidden" id="totalCnt" value="@ViewBag.totalCnt">
+                    <input type="hidden" id="@no" value="@id_list">        
+                    <input type="hidden" id="@item.BookId" value="@item.RatingNum">
+                    <div class="col-8 col-lg-12 col-md-7 col-xs-6 rating" id="@no@item.BookId" style="padding-left: 0px">
+                        
+                    </div>
+                </td>
+                <td class="media-grid"><div class="author-width">@item.BookAuthor</div></td>
+                <td class="media-grid">
+                    @switch (item.MaturityRating)
+                    {
+                        case "Everyone":
+                            <img src="~/images/Elogo.png" class="rating-size" />
+                            break;
+                        case "Discerning":
+                            <img src="~/images/Dclogo.png" class="rating-size" />
+                            break;
+                        case "Adult":
+                            <img src="~/images/Alogo.png" class="rating-size" />
+                            break;
+                        case "Disruptive":
+                            <img src="~/images/Drlogo.png" class="rating-size" />
+                            break;
+                        default:
+                            <p>Not rated.</p>
+                            break;
+                    }
+                </td>
+                <td>@item.Genre1</td>
+                <td>@item.Genre2</td>
+                <td class="media-grid">@item.WritingType</td>
+                <td><div class="synopsis">@item.Synopsis</div></td>
+            </tr>
+        }
+        <tr class="black-bkg">
+            <td colspan="12">
+                @{
+                    int PrevPageNo = ViewBag.PageNo - 1;
+                    if (PrevPageNo <= 0)
+                    {
+                        PrevPageNo = 1;
+                    }
+
+                    int NextPageNo = ViewBag.PageNo + 1;
+                    if (NextPageNo > ViewBag.NoOfPages)
+                    {
+                        NextPageNo = ViewBag.NoOfPages;
+                    }
+                }
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="/books/index?SortColumn=@ViewBag.SortColumn&SortOrder=@ViewBag.SortOrder&PageNo=@PrevPageNo">Prev</a>
+                    </li>
+                    @for (int i = 0; i < ViewBag.NoOfPages; i++)
+                    {
+                        if ((i + 1) == ViewBag.PageNo)
+                        {
+                            <li class="page-item active">
+                                <a class="page-link" href="/books/index?SortColumn=@ViewBag.SortColumn&SortOrder=@ViewBag.SortOrder&PageNo=@(i+1)">@(i + 1)</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="/books/index?SortColumn=@ViewBag.SortColumn&SortOrder=@ViewBag.SortOrder&PageNo=@(i+1)">@(i + 1)</a>
+                            </li>
+                        }
+                    }
+                    <li class="page-item">
+                        <a class="page-link" href="/books/index?SortColumn=@ViewBag.SortColumn&SortOrder=@ViewBag.SortOrder&PageNo=@NextPageNo">Next</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <small class="smalls text-margin-left">
+        <a href="~/books/Disclaimer" class="text-white animation">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+        <a href="~/books/TermsAndConditions" class="text-white animation">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;
+        <a href="~/books/PrivacyPolicy" class="text-white animation">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+        <a href="/Account/Contact" class="text-white animation">Contact US</a>
+    </small>
+</form>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var totalCnt = $("#totalCnt").val();
+            for (var i = 0; i < totalCnt; i ++) {
+                var id = $("#" + i + "").val();
+                var rating_num = $("#" + id).val();
+                if (rating_num == 0) {
+                    html = "<input type='radio' id='star5' name='rating"+id+"' value='5' /><span for='star5' title='Rocks!'>5 stars</span>" +
+                           "<input type='radio' id='star4' name='rating"+id+"' value='4' /><span for='star4' title='Pretty good'>4 stars</span>" +
+                           "<input type='radio' id='star3' name='rating"+id+"' value='3' /><span for='star3' title='Meh'>3 stars</span>" +
+                           "<input type='radio' id='star2' name='rating"+id+"' value='2' /><span for='star2' title='Kinda bad'>2 stars</span>" +
+                           "<input type='radio' id='star1' name='rating"+id+"' value='1' /><span for='star1' title='Sucks big time'>1 star</span>";
+                } else if (rating_num == 1) {
+                    html = "<input type='radio' id='star5' name='rating"+id+"' value='5' /><span for='star5' title='Rocks!'>5 stars</span>" +
+                           "<input type='radio' id='star4' name='rating"+id+"' value='4' /><span for='star4' title='Pretty good'>4 stars</span>" +
+                           "<input type='radio' id='star3' name='rating"+id+"' value='3' /><span for='star3' title='Meh'>3 stars</span>" +
+                           "<input type='radio' id='star2' name='rating"+id+"' value='2' /><span for='star2' title='Kinda bad'>2 stars</span>" +
+                           "<input type='radio' id='star1' name='rating"+id+"' value='1' checked/><span for='star1' title='Sucks big time'>1 star</span>";
+                } else if (rating_num == 2) {
+                    html = "<input type='radio' id='star5' name='rating"+id+"' value='5' /><span for='star5' title='Rocks!'>5 stars</span>" +
+                           "<input type='radio' id='star4' name='rating"+id+"' value='4' /><span for='star4' title='Pretty good'>4 stars</span>" +
+                           "<input type='radio' id='star3' name='rating"+id+"' value='3' /><span for='star3' title='Meh'>3 stars</span>" +
+                           "<input type='radio' id='star2' name='rating"+id+"' value='2' checked/><span for='star2' title='Kinda bad'>2 stars</span>" +
+                           "<input type='radio' id='star1' name='rating"+id+"' value='1' /><span for='star1' title='Sucks big time'>1 star</span>";
+                } else if (rating_num == 3) {
+                    html = "<input type='radio' id='star5' name='rating"+id+"' value='5' /><span for='star5' title='Rocks!'>5 stars</span>" +
+                           "<input type='radio' id='star4' name='rating"+id+"' value='4' /><span for='star4' title='Pretty good'>4 stars</span>" +
+                           "<input type='radio' id='star3' name='rating"+id+"' value='3' checked/><span for='star3' title='Meh'>3 stars</span>" +
+                           "<input type='radio' id='star2' name='rating"+id+"' value='2' /><span for='star2' title='Kinda bad'>2 stars</span>" +
+                           "<input type='radio' id='star1' name='rating"+id+"' value='1' /><span for='star1' title='Sucks big time'>1 star</span>";
+                } else if (rating_num == 4) {
+                    html = "<input type='radio' id='star5' name='rating"+id+"' value='5' /><span for='star5' title='Rocks!'>5 stars</span>" +
+                           "<input type='radio' id='star4' name='rating"+id+"' value='4' checked/><span for='star4' title='Pretty good'>4 stars</span>" +
+                           "<input type='radio' id='star3' name='rating"+id+"' value='3' /><span for='star3' title='Meh'>3 stars</span>" +
+                           "<input type='radio' id='star2' name='rating"+id+"' value='2' /><span for='star2' title='Kinda bad'>2 stars</span>" +
+                           "<input type='radio' id='star1' name='rating"+id+"' value='1' /><span for='star1' title='Sucks big time'>1 star</span>";
+                } else if (rating_num == 5) {
+                    html = "<input type='radio' id='star5' name='rating"+id+"' value='5' checked/><span for='star5' title='Rocks!'>5 stars</span>" +
+                           "<input type='radio' id='star4' name='rating"+id+"' value='4' /><span for='star4' title='Pretty good'>4 stars</span>" +
+                           "<input type='radio' id='star3' name='rating"+id+"' value='3' /><span for='star3' title='Meh'>3 stars</span>" +
+                           "<input type='radio' id='star2' name='rating"+id+"' value='2' /><span for='star2' title='Kinda bad'>2 stars</span>" +
+                           "<input type='radio' id='star1' name='rating"+id+"' value='1' /><span for='star1' title='Sucks big time'>1 star</span>";
+                }
+                document.getElementById(i + "" + id + "").innerHTML = html;
+                html = "";
+            }
+        });
+
+        function GenreChanged() {
+            $('#btnSubmit').click();
+        }
+    </script>
+}

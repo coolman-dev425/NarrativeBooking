@@ -1,0 +1,91 @@
+﻿@using WebApplication1.Helper;
+
+@model WebApplication1.Models.UserBookModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<table class="detail-title">
+    <tr>
+        <td>
+            <h2 style="text-align:center;">@Model.Book.BookTitle</h2>
+            <p style="text-align:center;">@Model.Book.WritingType</p>
+            <p style="text-align:center">@Model.Book.Editing</p>
+            <p>By: @Model.Book.BookAuthor</p>
+            <p>@Model.Book.AuthorBio</p>
+        </td>
+    </tr>
+</table>
+<div class="index-white">
+    <img class="cover_book" src="@ViewBag.CoverPath" />
+</div>
+<div class="samples">
+    <div class="index-white">Book Sample:</div>
+    <div class="wrsamp">
+        <p>@Model.Book.WritingSample</p>
+    </div>
+</div>
+
+<p class="white text-margin-left">Click below to read this in your browser:</p>
+
+@if (!Model.IsPurchased && (!Model.Book.CreatedBy.HasValue || Model.Book.CreatedBy.Value != User.GetUserId()))
+{
+    <form action="/books/DetailsPost" method="post" class="inline-block">
+        <input hidden name="bookId" id="bookId" value="@Model.Book.BookId" />
+        <button type="submit" class="purchase-btn details-btn">Add To Reading List</button>
+    </form>
+}
+
+@if (Model.IsPurchased)
+{
+    <p class="white text-margin-left inline-block">You have already purchased this.</p>
+}
+
+@*<input type="text" id="BookTitle" name="BookTitle" hidden value="@Model.Book.BookTitle" />*@
+@if (!Model.IsInWishList && !Model.IsPurchased)
+{
+    <form action="~/wishlist/DetailsWishList" method="post" class="inline-block">
+        <input id="bookId" name="bookId" hidden value="@Model.Book.BookId" />
+        <button type="submit" class="details-btn wish-btn-margin">Add To Wishlist</button>
+    </form>
+}
+else if (Model.IsInWishList && !Model.IsPurchased)
+{
+    <form action="~/books/removewishlist" method="post" class="inline-block">
+        <input id="bookId" name="bookId" hidden value="@Model.Book.BookId" />
+        <button type="submit" class="details-btn">Remove From Wishlist</button>
+    </form>
+}
+
+@if (User.Identity.IsAuthenticated && Model.Book.CreatedBy.HasValue && @Model.UserId != Model.Book.CreatedBy.Value)
+{
+    if (Model.IsFollowed)
+    {
+        <form action="~/Account/Unfollow" method="post" class="inline-block follow-spacing">
+            <input id="bookId" name="bookId" hidden value="@Model.Book.BookId" />
+            <button type="submit" class="details-btn">Unfollow Author</button>
+        </form>
+    }
+    else
+    {
+        <form action="~/Account/AddFollower" method="post" class="inline-block follow-spacing">
+            <input id="bookId" name="bookId" hidden value="@Model.Book.BookId" />
+            <button type="submit" class="details-btn">Follow Author</button>
+        </form>
+    }
+}
+
+<ul class="details">
+    <li><img src="~/images/narrativV.svg" alt="narrrative" class="brand-width-detail" /></li>
+    <li>Genre: @Model.Book.Genre1</li>
+    <li>Genre: @Model.Book.Genre2</li>
+    <li>Maturity Rating: @Model.Book.MaturityRating</li>
+    <li>Pages: @Model.Book.PageCount</li>
+    <li>Followers: @ViewBag.FollowCount</li>
+</ul>
+<small class="smalls text-margin-left">
+    <a href="~/books/Disclaimer" class="text-white animation">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+    <a href="~/books/TermsAndConditions" class="text-white animation">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;
+    <a href="~/books/PrivacyPolicy" class="text-white animation">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+    <a href="/Account/Contact" class="text-white animation">Contact US</a>
+</small>

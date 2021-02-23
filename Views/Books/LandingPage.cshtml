@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    
+}
+    <div class="landing">
+        <div class="col-12" style="text-align: center">
+            <div class="col-4">
+                @ViewBag.Message
+            </div>
+            <span class="col-4">
+                <img class="dodgerblue center-img" src="~/images/Bookshop2.svg" alt="bookshop" />
+            </span>
+            <div class="col-4">
+                @ViewBag.Message
+            </div>
+        </div>
+        <div class="col-12 center-text">
+            <p>Original, quality wiriting from the public. These features connect writers directly to their</p>
+            <p>readers with social engagement.</p>
+        </div>
+        <div class="col-12" id="buttons">
+            <a type="button" class="btn dark btn-outline sbold uppercase" href="/Books/UploadForm">Upload Your Work</a> 
+            <a type="button" class="btn dark btn-outline sbold uppercase" href="/Account/Login">Login/Register</a> 
+            <a type="button" class="btn dark btn-outline sbold uppercase" href="/Books/Index">Browse Bookstore</a> 
+        </div>
+        <div class="col-12" id="bottom">
+                <img src="~/images/narrativVW.svg" alt="narrrative" style="height: 150px" />
+                <img src="~/images/ratingsGrid.svg" alt="narrrative" class="ratings-width rating-grid" />
+                
+            <div class="col-12">
+                <span class="text-white">Using copyrighted software Hummingbird. All images and software owned by Narrativ Books.</span>
+                <span style="float: right;">
+                    <a href="~/books/Disclaimer" class="text-white animation">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+                    <a href="~/books/TermsAndConditions" class="text-white animation">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;
+                    <a href="~/books/PrivacyPolicy" class="text-white animation">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+                    <a href="/Account/Contact" class="text-white animation">Contact US</a>
+                </span>
+                
+            </div>
+        </div>
+        
+        
+        <!-- <div class="col-12">
+            <div class="col-3" style="float: left">
+                <img src="~/images/narrativVW.svg" alt="narrrative" style="width: 100%; height: 150px" />
+            </div>
+            <div style="float: right; background: white;">
+                <img src="~/images/ratingsGrid.svg" alt="narrrative" class="ratings-width" style="width: 100%; height: 150px;" />
+                <div>
+                    <a href="~/books/Disclaimer" class="text-white">Disclaimer</a>&nbsp;&nbsp;&nbsp;<a href="~/books/TermsAndConditions" class="text-white">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;<a href="~/books/PrivacyPolicy" class="text-white">Privacy Policy</a>
+                </div>    
+            </div>
+        </div> -->
+        <!-- <div class="col-12">
+            <p>Using copyrighted software Hummingbird. All images and software owned by Narrativ Books.</p>    
+        </div> -->
+    </div>

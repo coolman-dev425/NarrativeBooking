@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using WebApplication1.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="description" content="Self-publishing: Book maturity ratings, genres, search by synopsis." />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/components.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <partial name="_Favicons" />
+    @RenderSection("CSS", required: false)
+    <title>Narrativ Books | Indie Bookstore</title>
+</head>
+<body>
+    <div class="landing-top">
+        <div class="col-12"><img class="logo" src="~/images/NarrativLogosW.svg" alt="narrrative" />
+            <form class="form-inline" action="/books/Index">
+                <div class="search-middle">
+                    <div class="center-search">
+                        <p for="search" class="search-title text-white">Search</p>
+                        <input type="search" class="form-control search-items" id="search" name="search" placeholder="Details or Synopsis Excerpts" value="@ViewBag.search"/>
+                        <button type="submit" class="btn dark btn-outline sbold uppercase" id="btnSubmit">Go</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <span class="text-white" style="padding-left: 130px;">The self-publishing floor of Wall St. Engage. Sell.</span>
+        
+        <div class="col-3">
+            @ViewBag.Message
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <script src="~/lib/signalr/dist/browser/signalr.js"></script>
+        <script src="~/js/chat.js"></script>
+    }
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

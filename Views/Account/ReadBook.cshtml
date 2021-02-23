@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Read Book";
+    Layout = "~/Views/Shared/_LayoutPageReader.cshtml";
+}
+<!--<div class="card">
+    <div class="card-body">
+        <div class="text-secondary">
+            @Html.Raw(Model)
+        </div>
+    </div>
+</div>-->
+
+<!-- <div class="reader-bkg">
+    <div class="reader-txt" onmousedown="return false;">
+        @Html.Raw(Model)
+    </div>
+</div> -->
+
+<div class="reader-bkg">
+    <div id="container" hidden=>@Html.Raw(Model)</div>
+    <span id="html-2-pdfwrapper" class="reader-txt" onmousedown="return false;">
+    </span>
+    <input type="hidden" id="bookid" name="bookid" value="@ViewBag.bookId" asp-for="bookid" >
+    <div class="col-8 col-lg-6 col-md-7 col-xs-6 rating">
+        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+    </div>
+    <input type="button" class="btn dark btn-outline sbold uppercase" id="submit" value="Rating" />
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        generate();
+        
+    });
+    $('#submit').on('click', function(e) {
+        $.ajax({
+            url: '/Account/RatingBook',
+            type: 'post',
+            data: {
+                ratingvalue: $('input:radio[name=rating]:checked').val(),
+                bookid: $("#bookid").val()
+            },
+            success: function(res) {
+                alert("Rating Finishied");
+            }
+        })
+    });
+
+    var base64Img = null;
+    margins = {
+        top: 70,
+        bottom: 40,
+        left: 30,
+        width: 550
+    };
+
+/* append other function below: */
+
+    generate = function()
+    {
+        var contentDIV = document.getElementById('container');
+        var imgs = $("#container").find('img');
+        if (imgs.length > 0)
+            $("#container").find('img').remove();
+        // var content = document.getElementById('container').innerHTML;
+        // var modify_content = str.replace('"', "'");
+
+        var pdf = new jsPDF('p', 'pt', 'a4');
+        pdf.setFontSize(18);
+        pdf.fromHTML(document.getElementById('container').innerHTML, margins.left, margins.top,
+        {
+          width: margins.width// max width of content on PDF
+        }, function(dispose) {
+          headerFooterFormatting(pdf)
+        }, margins);
+
+        // var height = $("#container").offset().top + document.getElementById('container').offsetHeight;
+        // for (var i = 0; i < imgs.length; i ++) {
+        //     pdf.addImage(imgs[i], 'JPEG', margins.left, (i+1)*(height + 10 + imgs[i].height), imgs[i].width, imgs[i].height);
+        // }
+
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('style','flat:left;right:0; top:0; bottom:0; height:974px; width:100%; padding:20px;');
+        document.body.appendChild(iframe);
+      
+        iframe.src = pdf.output('datauristring');
+    };
+
+    function headerFooterFormatting(doc)
+    {
+        var totalPages  = doc.internal.getNumberOfPages();
+        for(var i = totalPages; i >= 1; i--)
+        { //make this page, the current page we are currently working on.
+            doc.setPage(i);      
+            // header(doc);
+            // footer(doc, i, totalPages);
+        }
+    };
+
+    function header(doc)
+    {
+        doc.setFontSize(30);
+        doc.setTextColor(40);
+        doc.setFontStyle('normal');
+      
+        if (base64Img) {
+           doc.addImage(base64Img, 'JPEG', margins.left, 10, 40,40);        
+        }
+          
+        doc.text("", margins.left + 50, 40 );
+      
+        doc.line(3, 70, margins.width + 43,70); // horizontal line
+    };
+
+    function imgToBase64(url, callback, imgVariable) {
+     
+        if (!window.FileReade) {
+            callback(null);
+            return;
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = function() {
+            var reader = new FileReader();
+            reader.onloadend = function() {
+          imgVariable = reader.result.replace('text/xml', 'image/jpeg');
+                callback(imgVariable);
+            };
+            reader.readAsDataURL(xhr.response);
+        };
+        xhr.open('GET', url);
+        xhr.send();
+    };
+</script>

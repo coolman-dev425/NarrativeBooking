@@ -1,0 +1,71 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using WebApplication1.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="description" content="Self-publishing: Book maturity ratings, genres, search by synopsis." />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/components.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <partial name="_Favicons" />
+    @RenderSection("CSS", required: false)
+    <title>Narrativ Books | Indie Bookstore</title>
+</head>
+<body class="bg-white">
+    <nav class="table inline-flex full-width">
+        <a class="navbar-brand" href="/books/LandingPage"><img  class="full-width" src="~/images/narrativV.svg" alt="narrrative" /></a>
+        <ul class="layout-grid">
+            <li class="nav-item">
+                <a class="nav-link grey-font-multi" href="/books/Index">Open Market</a>
+            </li>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li class="nav-item">
+                    <a class="nav-link grey-font-multi" href="/account/userchat">Chat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link grey-font-multi" href="/account/Logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dodgerblue-text tahoma" title="UserName" href="/account/UserProfile">Hello, @UserManager.GetUserName(User)</a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a class="nav-link black" href="/Account/Login">Login to Upload, Edit or Delete</a>
+                </li>
+                <li>
+                    <a class="nav-link black" href="/Account/Register">Register</a>
+                </li>
+            }
+        </ul>
+        <div class="col-5 col-lg-6 col-md-4">
+            @ViewBag.Message
+        </div>
+        <div class="navbar-brand ratings-wrapper media-grid">
+            <img src="~/images/ratingsGrid.svg" alt="narrrative" class="ratings-width" />
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <script src="~/lib/signalr/dist/browser/signalr.js"></script>
+        <script src="~/js/chat.js"></script>
+    }
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

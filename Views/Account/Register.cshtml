@@ -1,0 +1,33 @@
+﻿@model WebApplication1.Models.Identity.RegisterDTO
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutPageLoginRegister.cshtml";
+}
+
+<h2 class="upload-title">Register</h2>
+
+
+<form asp-action="/Account/Register" method="post">
+    <div asp-validation-summary="All" class="red-text"></div>
+    <input class="reg-input" name="UserName" asp-for="UserName" placeholder="User name" value="@Model.UserName" required/>
+    <input class="reg-input" name="Email" asp-for="Email" type="email" placeholder="Email" value="@Model.Email" required />
+    <div class="email-survey mag-text">
+        <small>Please provide a correct email. Within 3 days of signing up we will send you a 5 minute survey to complete and participate in the app dev!</small>
+    </div>
+    <input type="password" class="reg-input" name="Password" asp-for="Password" placeholder="Password" value="@Model.Password" required/>
+    <span asp-validation-for="Password" class="red-text"></span>
+    <input type="password" class="reg-input" name="Password" asp-for="Password" placeholder="Confirm password" value="@Model.ConfirmPassword" required/>
+    <span asp-validation-for="Password" class="red-text"></span>
+    <div class="form-group">
+        <div class="col-md-offset-2 titles">
+            <input type="submit" class="btn dark btn-outline sbold uppercase" value="Enter" />
+        </div>
+    </div>
+</form>
+<small class="smalls text-margin-left">
+    <a href="~/books/Disclaimer" class="animation">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+    <a href="~/books/TermsAndConditions" class="animation">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;
+    <a href="~/books/PrivacyPolicy" class="animation">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+    <a href="/Account/Contact" class="animation">Contact US</a>
+</small>

@@ -1,0 +1,120 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\WebApplication1\\WebApplication1.csproj": {}
+  },
+  "projects": {
+    "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\Maturity\\Maturity.vcxproj": {
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\Maturity\\Maturity.vcxproj",
+        "projectName": "Maturity",
+        "projectPath": "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\Maturity\\Maturity.vcxproj"
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\WebApplication1\\WebApplication1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\WebApplication1\\WebApplication1.csproj",
+        "projectName": "WebApplication1",
+        "projectPath": "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\WebApplication1\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\Incredible\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\WebApplication1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Incredible\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\Maturity\\Maturity.vcxproj": {
+                "projectPath": "E:\\Projects\\C++ Project\\current app\\current app\\Narrativ_Books\\Maturity\\Maturity.vcxproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.10.0-beta0002, )"
+            },
+            "Mammoth": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.AspNetCore.Razor.Language": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Utils": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[28.5.0, )"
+            },
+            "System.Runtime.Caching": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

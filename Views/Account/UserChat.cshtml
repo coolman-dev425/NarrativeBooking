@@ -1,0 +1,110 @@
+﻿@using Microsoft.AspNetCore.Hosting
+
+@inject IHostingEnvironment env
+@{
+    ViewData["Title"] = "UserChat";
+    Layout = "~/Views/Shared/_LayoutPageChat.cshtml";
+}
+@model WebApplication1.Models.UserChatModel
+
+<div class="index-white">Users will receive messages when logging in- but nothing is stored once you log out!</div>
+<input id="loggedInUserChat" value="@Model.HasAvatar.ToString()" hidden/>
+<div class="row bg-white my-5 w-75 mx-auto">
+    <div class="col-3 px-0">
+        <div class="vd_mega-menu-content pb-0">
+            <div class="child-menu">
+                <div class="title">
+                    Followers
+                </div>
+                <div class="content-list  content-image">
+                    <div data-rel="scroll" class="scrollbar scrollbar-primary">
+                        <ul class="list-wrapper" id="chatList">
+                            @foreach (WebApplication1.Identity.User user in Model.FollowUsers)
+                            {
+                                <li id="@user.UserName" class="pl-2" hasAvatar="@user.HasAvatar.ToString()">
+                                    <a href="#" onclick="selectUserChat('@user.UserName')">
+                                        <div class="menu-icon">
+                                            @{
+                                                var src = user.HasAvatar ? "/images/useravatar_" + user.UserName + ".png" : "/images/user-icon.png";
+                                            }
+
+                                            <img src="@src" width="32" height="32"
+                                                 alt="example image" class="rounded-circle">
+                                            <div class="menu-badge">
+                                                @if (user.IsOnline.HasValue && user.IsOnline.Value)
+                                                {
+                                                    <span class="badge status vd_bg-green" id="@("status-" + user.UserName)">&nbsp;</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge status vd_bg-grey" id="@("status-" + user.UserName)">&nbsp;</span>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="menu-text">
+                                            @user.FullName
+                                            <div class="menu-info">
+                                                @switch (user.FollowType)
+                                                {
+                                                    case WebApplication1.Identity.FollowType.Follower:
+                                                        <span class="menu-date">Follower</span>
+                                                        break;
+                                                    case WebApplication1.Identity.FollowType.Following:
+                                                        <span class="menu-date">Following</span>
+                                                        break;
+                                                    default:
+                                                        <span class="menu-date">Mutual Follow</span>
+                                                        break;
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="menu-badge messageNotifier" id="@("messageNotifier-" + user.UserName)">
+                                            <span class="badge status vd_bg-orange" id="@("status-" + user.UserName)">&nbsp;</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-9 px-0">
+        <div class="vd_mega-menu-content pb-0"
+             data-action="click-target">
+            <div class="child-menu">
+                <div class="title">
+                    <span id="selectedUserChat"></span> @*<i>(online)</i>*@
+                    <div class="vd_panel-menu">
+                        <div data-rel="tooltip" data-original-title="Make a Call"
+                             class="menu entypo-icon smaller-font">
+                            <i class="icon-phone"></i>
+                        </div>
+                        <div data-rel="tooltip" data-original-title="Video Call" class="menu">
+                            <i class="fa fa-video-camera"></i>
+                        </div>
+                        <div data-rel="tooltip" data-original-title="Message Setting"
+                             class="menu smaller-font entypo-icon">
+                            <i class="icon-cog"></i>
+                        </div>
+                        <div data-rel="tooltip" data-original-title="Close" class="menu entypo-icon">
+                            <i class="icon-cross"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-list content-image content-menu">
+                    <div data-rel="scroll" class="scrollbar scrollbar-primary" id="chatScrollWindow">
+                        <ul class="list-wrapper pd-lr-10" id="lstChatDetail"></ul>
+                    </div>
+                    <div class="closing chat-area">
+                        <div class="chat-box">
+                            <input type="text" placeholder="Enter your message.." id="txtChatBox" maxlength="200" />
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- child-menu -->
+        </div> <!-- vd_mega-menu-content -->
+    </div>
+</div>
+<small class="smalls text-margin-left"><a href="~/books/Disclaimer" class="text-white">Disclaimer</a>&nbsp;&nbsp;&nbsp;<a href="~/books/TermsAndConditions" class="text-white">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;<a href="~/books/PrivacyPolicy" class="text-white">Privacy Policy</a></small>

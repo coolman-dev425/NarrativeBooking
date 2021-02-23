@@ -1,0 +1,168 @@
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csprojAssemblyReference.cache
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cache
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfo.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\libman.json
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.deps.json
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.json
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.dev.json
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.dll
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.pdb
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.dll
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Maturity.dll
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Maturity.pdb
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.input.cache
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.output.cache
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorCoreGenerate.cache
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\ReadBook.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\UserChat.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\UserProfile.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Delete.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Details.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Disclaimer.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Edit.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Index.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\LandingPage.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\PaymentPage.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\PrivacyPolicy.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\TermsAndConditions.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\UploadForm.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Favicons.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPage1.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageChat.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageEditDelete.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageIndex.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageLoginRegister.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageReader.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageUpload.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageUserProfile.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cache
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cs
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.dll
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.pdb
+C:\Users\newLa\OneDrive\Desktop\Release_07\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.genruntimeconfig.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\libman.json
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.deps.json
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.json
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.dev.json
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.dll
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.pdb
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.dll
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Maturity.dll
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Maturity.pdb
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csprojAssemblyReference.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfo.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.input.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.output.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorCoreGenerate.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\ReadBook.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\UserChat.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\UserProfile.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Delete.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Details.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Disclaimer.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Edit.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Index.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\LandingPage.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\PaymentPage.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\PrivacyPolicy.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\TermsAndConditions.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\UploadForm.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Favicons.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPage1.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageChat.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageEditDelete.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageIndex.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageLoginRegister.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageReader.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageUpload.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageUserProfile.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cache
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cs
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.dll
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.pdb
+C:\Users\conne\Desktop\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.genruntimeconfig.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\appsettings.Development.json
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\appsettings.json
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\libman.json
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.deps.json
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.json
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.dev.json
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.dll
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.pdb
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.dll
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Maturity.dll
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\bin\Debug\netcoreapp2.1\Maturity.pdb
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csprojAssemblyReference.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfoInputs.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfo.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CoreCompileInputs.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.input.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.output.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorCoreGenerate.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\Contact.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\MemberShip.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\ReadBook.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\UserChat.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Account\UserProfile.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Delete.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Details.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Disclaimer.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Edit.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\Index.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\LandingPage.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\PaymentPage.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\PrivacyPolicy.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\TermsAndConditions.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Books\UploadForm.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Favicons.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPage1.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageChat.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageEditDelete.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageIndex.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageLoginRegister.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageReader.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageUpload.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutPageUserProfile.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cache
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cs
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.dll
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.pdb
+E:\Projects\C++ Project\current app\current app\Narrativ_Books\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.genruntimeconfig.cache

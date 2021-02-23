@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "UploadForm";
+    Layout = "~/Views/Shared/_LayoutPageUpload.cshtml";
+}
+
+<h5 class="upload-title">Become a member to post your book live:</h5>
+
+<form asp-action="/Account/MemberShip" method="post">
+    <div class="upload-grid">
+        <div id="upload-left" class="upload-left">
+            <fieldset class="upload-form">
+                <div class="black">Payment with either:</div>
+            </fieldset>
+            <fieldset class="upload-form">
+                <a href="http://www.stripe.com" target="_blank">
+                    <img class="payment_service" src="/images/stripe-seeklogo.com.svg">
+                </a>
+            </fieldset>
+            <fieldset class="upload-form">
+                <a href="http://www.dotpay.com" target="_blank">
+                    <img class="payment_service" src="/images/dotpay.svg">
+                </a>
+                <a href="http://www.skrill.com" target="_blank">
+                    <img class="payment_service" src="/images/skrill.svg">
+                </a>
+                <a href="http://www.wechatpay.com" target="_blank">
+                    <img class="payment_service" src="/images/wechatpay.svg">
+                </a>
+            </fieldset>
+            <fieldset class="upload-form">
+                <a href="http://www.paypal.com" target="_blank">
+                    <img class="payment_service" src="/images/paypal_reference.svg">
+                </a>
+            </fieldset>
+        </div>
+        <div id="upload-right" class="upload-right">
+            <fieldset class="upload-form">
+                <div id="alert" class="black">Membership is only $$$ per month! Billed every 30 days until cancelled.</div>
+            </fieldset>
+            <div asp-validation-summary="All" class="red-text"></div>
+            <fieldset class="upload-form">
+                <input class="reg-input" name="UserName" asp-for="UserName" placeholder="User name" value="@Model.UserName" required />    
+                <input class="reg-input" name="Email" asp-for="Email" type="email" placeholder="Email" value="@Model.Email" required />    
+                <input type="password" class="reg-input" name="Password" asp-for="Password" placeholder="Password" value="@Model.Password" required />    
+                <span asp-validation-for="Password" class="red-text"></span>
+                <input type="password" class="reg-input" name="ConfirmPassword" asp-for="Password" placeholder="Confirm password" value="@Model.ConfirmPassword" required />
+                <span asp-validation-for="ConfirmPassword" class="red-text"></span>    
+            </fieldset>
+            <fieldset class="upload-form">
+                <div class="form-group">
+                    <div class="col-md-offset-2 titles">
+                        <input type="submit" class="btn dark btn-outline sbold uppercase" value="Continue" />
+                    </div>
+                </div>    
+            </fieldset>
+        </div>
+    </div>
+</form>

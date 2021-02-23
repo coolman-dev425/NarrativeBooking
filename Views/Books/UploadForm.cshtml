@@ -1,0 +1,177 @@
+﻿@{
+    ViewBag.Title = "UploadForm";
+    Layout = "~/Views/Shared/_LayoutPageUpload.cshtml";
+}
+
+<h5 class="upload-title">Book Upload Form</h5>
+
+<form action="/books/UploadForm" method="post" enctype="multipart/form-data" class="mag-text">
+    <div class="upload-grid">
+        <div class="upload-left">
+            <fieldset class="upload-form">
+                <div class="black">Visit this page before entering data and come back:</div>
+                <input type="checkbox" required id="terms" name="terms" class="upload-checkbox"><label for="terms">&nbsp;User agrees to this 5 minute read: <a href="~/books/Disclaimer">Narrativ Books Disclaimer</a></label>
+            </fieldset>
+            <input type="text" hidden class="form-control" id="clientSecret" name="paymentIntentId" value="@ViewData["PaymentIntentId"]" />
+            <fieldset class="upload-form">
+                <input type="text" class="form-control-input form-control" id="BookTitle" name="book_title" required placeholder="Title of the work" />
+            </fieldset>
+            <fieldset class="upload-form">
+                <input type="text" class="form-control-input form-control" id="BookAuthor" name="BookAuthor" placeholder="Your name (or pen name!)" required />
+            </fieldset>
+            <fieldset class="upload-form">
+                <input type="number" class="form-control" id="PageCount" name="PageCount" placeholder="Number of pages" required />
+            </fieldset>
+            <fieldset class="upload-form">
+                <input type="number" class="form-control" id="book_price" name="book_price" placeholder="Set your price" required />
+            </fieldset>
+            <fieldset class="upload-form">
+                <label for="AuthorBio">Writer biography:</label>
+                <textarea rows="5" cols="30" name="AuthorBio" class="form-control" id="AuthorBio" placeholder="Brief biography..." maxlength="400" required></textarea>
+            </fieldset>
+            <fieldset class="upload-form">
+                <label for="Synopsis">Writing synopsis:</label>
+                <textarea rows="5" cols="30" name="Synopsis" class="form-control" id="Synopsis" placeholder="Brief synopsis..." maxlength="119" required></textarea>
+            </fieldset>
+            <fieldset class="upload-form">
+                <p>Upload (must be .docx file extension):</p>
+                <input type="file" name="docFile" required>
+            </fieldset>
+            <fieldset class="upload-form">
+                <p>Upload Your Avatar:</p>
+                <input type="file" id="coverfile" name="coverfile" required="">
+            </fieldset>
+        </div>
+        <div class="upload-right">
+            <fieldset class="upload-form">
+                <select name="Genre1" id="Genre1" required class="form-control-input form-control">
+                    <option selected="selected" value="">Genre One</option>
+                    <option value="Action/Sports/War">Action/Sports/War</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Business Fiction">Business Fiction</option>
+                    <option value="College Student">College/Student</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Contemporary">Contemporary</option>
+                    <option value="Crime/Cultural/Humanities">Crime/Cultural/Humanities</option>
+                    <option value="Family">Family</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="General Fiction">General Fiction</option>
+                    <option value="Historical/Time Period">Historical/Time-Period</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romanticism/Romance">Romanticism/Romance</option>
+                    <option value="Rural">Rural</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Scientific/Medical-Fiction">Scientific/Medical-Fiction</option>
+                    <option value="Sci-Fi/Fantasy">Sci-Fi/Fantasy</option>
+                    <option value="Supernatural">Supernatural</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Urban">Urban</option>
+                    <option value="Visceral">Visceral</option>
+                    <option value="Young Adult/Light Reading">Young Adult/Light Reading</option>
+                </select>
+            </fieldset>
+            <fieldset class="upload-form">
+                <select name="Genre2" id="Genre2" required class="form-control-input form-control">
+                    <option selected="selected" value="">Genre Two</option>
+                    <option value="Action/Sports/War">Action/Sports/War</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Business Fiction">Business Fiction</option>
+                    <option value="College Student">College/Student</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Contemporary">Contemporary</option>
+                    <option value="Crime/Cultural/Humanities">Crime/Cultural/Humanities</option>
+                    <option value="Family">Family</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="General Fiction">General Fiction</option>
+                    <option value="Historical/Time Period">Historical/Time-Period</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romanticism/Romance">Romanticism/Romance</option>
+                    <option value="Rural">Rural</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Scientific/Medical-Fiction">Scientific/Medical-Fiction</option>
+                    <option value="Sci-Fi/Fantasy">Sci-Fi/Fantasy</option>
+                    <option value="Supernatural">Supernatural</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Urban">Urban</option>
+                    <option value="Visceral">Visceral</option>
+                    <option value="Young Adult/Light Reading">Young Adult/Light Reading</option>
+                </select>
+            </fieldset>
+            <fieldset class="upload-form">
+                <select name="WritingType" id="WritingType" required class="form-control-input form-control">
+                    <option selected="selected" value="">Writing Type</option>
+                    <option value="Novel">Novel</option>
+                    <option value="Short Story">Short Story</option>
+                    <option value="Novella">Novella (short, light book)</option>
+                    <option value="Shorts Compilation">Shorts Compilation</option>
+                    <option value="Auto/Meta/Diary/Notes">Auto/Meta/Diary/Notes</option>
+                    <option value="Compilation of Novels">Compilation of Novels</option>
+                    <option value="Poem or Compilation of Poems">Poem or Compilation of Poems</option>
+                    <option value="Unique Structure">Unique Structure</option>
+                </select>
+            </fieldset>
+            <fieldset class="upload-form">
+                <select name="Editing" id="Editing" required class="form-control-input form-control">
+                    <option selected="selected" value="">Editing Level</option>
+                    <option value="Self-Edited">Self-Edited</option>
+                    <option value="Thoroughly Self-Edited">Thoroughly Self-Edited</option>
+                    <option value="Not Edited/First Drafts">Not Edited/First Drafts</option>
+                    <option value="Helped With Editing">Helped With Editing</option>
+                    <option value="Professionally Edited">Professionally Edited</option>
+                </select>
+            </fieldset>
+            <fieldset class="upload-form">
+                <label for="WritingSample">1000 word or less book sample:</label>
+                <textarea rows="15" cols="30" name="WritingSample" class="form-control" id="WritingSample" placeholder="Something to get a taste..." maxlength="5503" required></textarea>
+            </fieldset>
+            <br />
+            <fieldset class="upload-form">
+                <button type="submit" class="btn dark btn-outline sbold uppercase" id="PostBook" value="required">Post Book</button>
+            </fieldset>
+            
+        </div>
+    </div>
+</form>
+<small class="smalls text-margin-left">
+    <a href="~/books/Disclaimer" class="animation">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+    <a href="~/books/TermsAndConditions" class="animation">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;
+    <a href="~/books/PrivacyPolicy" class="animation">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+    <a href="/Account/Contact" class="animation">Contact US</a>
+</small>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#coverfile").change(function () {
+                var _URL = window.URL || window.webkitURL;
+                var file, img;
+                if ((file = this.files[0])) {
+                    img = new Image();
+                    var objectUrl = _URL.createObjectURL(file);
+                    img.onload = function () {
+                        var fdata = new FormData();
+                        var fileInput = $('#coverfile')[0];
+                        var file = fileInput.files[0];
+                        fdata.append("File", file);
+                        $.ajax({
+                            type: "POST",
+                            url: "/books/UploadCover",
+                            data: fdata,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            success: function (data) {
+                            },
+                            error: function () {
+                                console.log("Error occured!!");
+                            }
+                        });
+                        _URL.revokeObjectURL(objectUrl);
+                    };
+                    img.src = objectUrl;
+                }
+            });
+        })
+    });
+</script>

@@ -1,0 +1,32 @@
+﻿@model WebApplication1.Models.Identity.LoginDTO
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutPageLoginRegister.cshtml";
+}
+
+<form asp-action="/Account/Login" method="post" class="login-form">
+    <div asp-validation-summary="All" class="red-text"></div>
+    <input class="reg-input" name="UserName" asp-for="UserName" placeholder="User name" value="@Model.UserName" required />
+    <input type="password" class="reg-input" name="Password" placeholder="Password" asp-for="Password" value="@Model.Password" required />
+    <span asp-validation-for="Password" class="red-text"></span>
+    <div class="form-group">
+        <div class="col-md-offset-2 titles">
+            <input type="submit" class="btn dark btn-outline sbold uppercase" value="Login" />
+            @if (ViewBag.Status == "0") {
+                <a type="button" class="btn dark btn-outline sbold uppercase" style="margin-left: 50px" href="/Account/Register">Register</a>
+            } else {
+                <a type="button" class="btn dark btn-outline sbold uppercase" style="margin-left: 50px" href="/Account/MemberShip">Register</a>
+            }
+        </div>
+
+    </div>
+</form>
+<div style="margin-bottom: 1px">
+    <small class="smalls text-margin-right">
+        <a href="~/books/Disclaimer" class="animation">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+        <a href="~/books/TermsAndConditions" class="animation">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;
+        <a href="~/books/PrivacyPolicy" class="animation">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+        <a href="/Account/Contact" class="animation">Contact US</a>
+    </small>
+</div>

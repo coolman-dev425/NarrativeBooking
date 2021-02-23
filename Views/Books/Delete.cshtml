@@ -1,0 +1,67 @@
+﻿@model WebApplication1.Models.Book
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageEditDelete.cshtml";
+}
+
+<h2 class="login-title">Delete</h2>
+
+<h4 class="login-title">Are you sure you want to delete this?</h4>
+<form action="/books/delete/@Model.BookId" method="post">
+    <input type="hidden" name="BookID" value="@Model.BookId" />
+    <dl class="edit-titles white">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BookTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BookAuthor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BookAuthor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MaturityRating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaturityRating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Genre1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Genre2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PageCount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PageCount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Synopsis)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Synopsis)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorBio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AuthorBio)
+        </dd>
+    </dl>
+    <div class="edit-titles">
+        <button type="submit" value="Delete" class="details-btn ed">Delete</button>
+    </div>
+</form>
+<small class="smalls text-margin-left"><a href="~/books/Disclaimer" class="text-white">Disclaimer</a>&nbsp;&nbsp;&nbsp;<a href="~/books/TermsAndConditions" class="text-white">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;<a href="~/books/PrivacyPolicy" class="text-white">Privacy Policy</a></small>

@@ -1,0 +1,137 @@
+﻿@model WebApplication1.Models.Book
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutPageEditDelete.cshtml";
+}
+
+<h2 class="login-title">Edit</h2>
+
+<h4 class="login-title">@Model.BookTitle</h4>
+<form asp-action="books/edit/@Model.BookId" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="BookID" name="BookID" value="@Model.BookId" required />
+    <div class="edit-titles">
+        <label asp-for="MaturityRating" class="control-label">Maturity Rating: @Model.MaturityRating </label>
+    </div>
+    <br />
+    <div class="edit-titles white">
+        <label asp-for="BookTitle">Book Title</label>
+    </div>
+    <div class="login">
+        <input asp-for="BookTitle" class="form-control ed"
+               name="BookTitle" type="text" id="BookTitle" placeholder="@Model.BookTitle" value="@Model.BookTitle" required />
+        <span asp-validation-for="BookTitle" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="edit-titles white">
+        <label asp-for="BookAuthor">Book Author</label>
+    </div>
+    <div class="login">
+        <input asp-for="BookAuthor" class="form-control ed"
+               name="BookAuthor" type="text" id="BookAuthor" placeholder="@Model.BookAuthor" value="@Model.BookAuthor" required />
+        <span asp-validation-for="BookAuthor" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="edit-titles white">
+        <label asp-for="Genre1" class="control-label">Genre One</label>
+    </div>
+    <div class="login">
+        <select asp-for="Genre1" class="form-control ed" name="Genre1" id="Genre1" required>
+            <option selected="selected" value="@Model.Genre1">@Model.Genre1</option>
+            <option value="Action/Sports/War">Action/Sports/War</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Business Fiction">Business Fiction</option>
+            <option value="College Student">College/Student</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Contemporary">Contemporary</option>
+            <option value="Crime/Cultural/Humanities">Crime/Cultural/Humanities</option>
+            <option value="Family">Family</option>
+            <option value="General Fiction">General Fiction</option>
+            <option value="Historical/Time Period">Historical/Time-Period</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romanticism/Romance">Romanticism/Romance</option>
+            <option value="Rural">Rural</option>
+            <option value="Suspense">Suspense</option>
+            <option value="Scientific/Medical-Fiction">Scientific/Medical-Fiction</option>
+            <option value="Sci-Fi/Fantasy">Sci-Fi/Fantasy</option>
+            <option value="Supernatural">Supernatural</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Urban">Urban</option>
+            <option value="Visceral">Visceral</option>
+            <option value="Young Adult/Light Reading">Young Adult/Light Reading</option>
+        </select>
+        <span asp-validation-for="Genre1" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="edit-titles">
+        <label asp-for="Genre2" class="control-label white">Genre Two</label>
+    </div>
+    <div class="login">
+        <select asp-for="Genre2" class="form-control ed" name="Genre2" id="Genre2" required>
+            <option selected="selected" value="@Model.Genre2">@Model.Genre2</option>
+            <option value="Action/Sports/War">Action/Sports/War</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Business Fiction">Business Fiction</option>
+            <option value="College Student">College/Student</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Contemporary">Contemporary</option>
+            <option value="Crime/Cultural/Humanities">Crime/Cultural/Humanities</option>
+            <option value="Family">Family</option>
+            <option value="General Fiction">General Fiction</option>
+            <option value="Historical/Time Period">Historical/Time-Period</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romanticism/Romance">Romanticism/Romance</option>
+            <option value="Rural">Rural</option>
+            <option value="Suspense">Suspense</option>
+            <option value="Scientific/Medical-Fiction">Scientific/Medical-Fiction</option>
+            <option value="Sci-Fi/Fantasy">Sci-Fi/Fantasy</option>
+            <option value="Supernatural">Supernatural</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Urban">Urban</option>
+            <option value="Visceral">Visceral</option>
+            <option value="Young Adult/Light Reading">Young Adult/Light Reading</option>
+        </select>
+        <span asp-validation-for="Genre2" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="edit-titles white">
+        <label asp-for="PageCount" class="control-label ed">Page Count</label>
+    </div>
+    <div class="login">
+        <input asp-for="PageCount" class="form-control ed" name="PageCount" id="PageCount" placeholder="@Model.PageCount" value="@Model.PageCount" required />
+        <span asp-validation-for="PageCount" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="edit-titles white">
+        <label asp-for="Synopsis" class="control-label">Synopsis</label>
+    </div>
+    <div class="login">
+        <input asp-for="Synopsis" type="text" class="form-control ed" name="Synopsis" id="Synopsis" placeholder="@Model.Synopsis" value="@Model.Synopsis" required />
+        <span asp-validation-for="Synopsis" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="edit-titles white">
+        <label asp-for="WritingSample" class="control-label">Writing Sample</label>
+    </div>
+    <div class="login">
+        <input asp-for="WritingSample" type="text" class="form-control ed" name="WritingSample" id="WritingSample" placeholder="@Model.WritingSample" value="@Model.WritingSample" required />
+        <span asp-validation-for="WritingSample" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="edit-titles white">
+        <label asp-for="AuthorBio" class="control-label">Author Biography</label>
+    </div>
+    <div class="login">
+        <input asp-for="AuthorBio" type="text" class="form-control ed" name="AuthorBio" id="AuthorBio" placeholder="@Model.AuthorBio" value="@Model.AuthorBio" required />
+        <span asp-validation-for="AuthorBio" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 titles">
+            <input type="submit" value="Save" class="details-btn ed" />
+        </div>
+    </div>
+</form>
+<small class="smalls text-margin-left"><a href="~/books/Disclaimer" class="text-white">Disclaimer</a>&nbsp;&nbsp;&nbsp;<a href="~/books/TermsAndConditions" class="text-white">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;<a href="~/books/PrivacyPolicy" class="text-white">Privacy Policy</a></small>

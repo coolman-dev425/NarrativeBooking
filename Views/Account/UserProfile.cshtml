@@ -1,0 +1,250 @@
+﻿@model WebApplication1.Models.UserProfileModel
+@using Microsoft.AspNetCore.Identity
+@using WebApplication1.Identity
+
+@inject UserManager<User> UserManager
+@{
+    ViewData["Title"] = "UserProfile";
+    Layout = "~/Views/Shared/_LayoutPageUserProfile.cshtml";
+    var src = Model.HasAvatar ? "/images/useravatar_" + UserManager.GetUserName(User) + ".png" : "/images/user-icon.png";
+}
+
+<div class="media-grid">
+    <div class="grid-container">
+        <div class="grid-left">
+            <div class="profile-title">User Profile</div>
+
+            <div class="profile-lists-books">
+                <div class="profile-title-books">Your Books</div>
+                <table class="table">
+                    @foreach (var item in Model.Books)
+                    {
+                        @if (item.CreatedBy.HasValue && item.CreatedBy.Value.ToString() == @UserManager.GetUserId(User))
+                        {
+                            <div>
+                                <div class="your-book-title">@item.BookTitle</div>
+                                <div class="book-links">
+                                    <a href="/books/edit/@item.BookId" class="grey-text">Edit /</a>
+                                    <a href="/books/delete/@item.BookId" class="grey-text">Delete</a>
+                                </div>
+                            </div>
+                        }
+                    }
+                </table>
+            </div>
+            <small class="smalls text-margin-left profile-agreement">
+                <a href="~/books/Disclaimer"class="animation">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+                <a href="~/books/TermsAndConditions"class="animation">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;
+                <a href="~/books/PrivacyPolicy"class="animation">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+                <a href="/Account/Contact" class="animation">Contact US</a>
+            </small>
+        </div>
+
+        <div class="grid-middle">
+            <div class="profile-lists-reading">
+                <div class="reading-title">Reading List</div>
+                <table>
+                    @foreach (var item in Model.Purchased)
+                    {
+                        <tr>
+                            <td><div class="read-title">@item.BookTitle</div></td>
+                            <td>
+                                <form action="~/account/ReadBook" method="get">
+                                    <input type="text" hidden value="@item.BookId" name="bookId" />
+                                    <button class="read-btn" type="submit">&nbsp;- Read now</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+
+        <div class="grid-right">
+            <div class="row ml-5">
+                <div class="col">
+                    <div class="w-50 text-center">
+                        <img src="@src" height="178"
+                             alt="example image" class="rounded-circle">
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <label for="imagefile" class="btn btn-secondary btn-sm btn-block btn-outlined w-50 mt-2">Change avatar</label>
+                    <input type="file" id="imagefile" class="form-control-file d-none" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form method="post" class="profile-form ml-5">
+                        <div class="">
+                            Username: @UserManager.GetUserName(User)
+                        </div>
+                        <div class="">
+                            Email: @UserManager.GetUserAsync(User).Result.Email
+                        </div>
+                        <!-- <div class="col-md-offset-2 titles">
+                            Phone: @UserManager.GetUserAsync(User).Result.PhoneNumber
+                        </div>
+                        <div class="col-md-offset-2 titles">
+                            City: @UserManager.GetUserAsync(User).Result.City
+                        </div>-->
+                        <input type="text" name="name" hidden value="@UserManager.GetUserName(User)" />
+                        <div class="btn-center"><button type="submit" class="profile-btn" value="DeleteUserAccount">One-Click Delete</button></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="profile-lists-wishlist">
+                <div class="wishlist-title">Wish List</div>
+                <table>
+                    @foreach (var item in Model.WishList)
+                    {
+                        <tr>
+                            <td><div class="read-title">@item.BookTitle</div></td>
+                            <td>
+                                <div class="book-links">
+                                    <a href="~/Books/Details/@item.BookId" class="wishlist-visit">Visit</a>
+                                    <form action="/account/RemoveWishlist" method="post" class="wishlist-remove">
+                                        <input type="text" hidden value="@item.BookId" name="bookId" />
+                                        <button class="wishlist-btn" type="submit">/ Remove</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="media-profile">
+    <div class="profile-title-media">User Profile</div>
+    <div class="row w-50 m-auto">
+        <div class="col text-center m-auto">
+                <img src="@src" height="178"
+                     alt="example image" class="rounded-circle">
+        </div>
+        <div class="w-100"></div>
+        <div class="w-50 text-center m-auto"">
+            <label for="imagefile" class="btn btn-secondary btn-sm btn-block btn-outlined mt-2">Change avatar</label>
+            <input type="file" id="imagefile" class="form-control-file d-none" value="">
+        </div>
+    </div>
+    <form method="post" class="profile-form form-center">
+        <div class="">
+            Username: @UserManager.GetUserName(User)
+        </div>
+        <div class="">
+
+
+
+            Email: @UserManager.GetUserAsync(User).Result.Email
+        </div>
+
+
+
+
+
+
+
+        <!-- <div class="col-md-offset-2 titles">
+            Phone: @UserManager.GetUserAsync(User).Result.PhoneNumber
+        </div>
+        <div class="col-md-offset-2 titles">
+            City: @UserManager.GetUserAsync(User).Result.City
+        </div>-->
+        <input type="text" name="name" hidden value="@UserManager.GetUserName(User)" />
+        <div class="btn-center"><button type="submit" class="profile-btn" value="DeleteUserAccount">One-Click Delete</button></div>
+    </form>
+    <div class="profile-lists-reading">
+        <div class="reading-title">Reading List</div>
+        <table class="media-centered">
+            @foreach (var item in Model.Purchased)
+            {
+                <tr>
+                    <td><div class="read-title">@item.BookTitle</div></td>
+                    <td>
+                        <form action="~/account/ReadBook" method="get">
+                            <input type="text" hidden value="@item.BookId" name="bookId" />
+                            <button class="read-btn" type="submit">&nbsp;- Read now</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="profile-lists-wishlist">
+        <div class="wishlist-title">Wish List</div>
+        <table class="media-centered">
+            @foreach (var item in Model.WishList)
+            {
+                <tr>
+                    <td><div class="read-title">@item.BookTitle</div></td>
+                    <td>
+                        <div class="book-links">
+                            <a href="~/Books/Details/@item.BookId" class="wishlist-visit">Visit</a>
+                            <form action="/account/RemoveWishlist" method="post" class="wishlist-remove">
+                                <input type="text" hidden value="@item.BookId" name="bookId" />
+                                <button class="wishlist-btn" type="submit">/ Remove</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="profile-lists-books">
+        <div class="profile-title-books">Your Books</div>
+        <table class="table">
+            @foreach (var item in Model.Books)
+            {
+                @if (item.CreatedBy.HasValue && item.CreatedBy.Value.ToString() == @UserManager.GetUserId(User))
+                {
+                    <div>
+                        <div class="your-book-title">@item.BookTitle</div>
+                        <div class="book-links">
+                            <a href="/books/edit/@item.BookId" class="grey-text">Edit /</a>
+                            <a href="/books/delete/@item.BookId" class="grey-text">Delete</a>
+                        </div>
+                    </div>
+                }
+            }
+        </table>
+    </div>
+    <div class="centered-agreement">
+        <a href="~/books/Disclaimer" class="animation">Disclaimer</a>&nbsp;
+        <a href="~/books/TermsAndConditions" class="animation">Terms and Conditions</a>&nbsp;
+        <a href="~/books/PrivacyPolicy" class="animation">Privacy Policy</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#imagefile").change(function () {
+                var fdata = new FormData();
+                var fileInput = $('#imagefile')[0];
+                var file = fileInput.files[0];
+                fdata.append("File", file);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/account/UploadAvatar",
+                    data: fdata,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function (data) {
+                        console.log("successfull");
+                        $("#imgavatar").attr("src", data.data);
+                        location.reload();
+                    },
+                    error: function () {
+                        console.log("Error occured!!");
+                    }
+                });
+            });
+        })
+    });
+</script>

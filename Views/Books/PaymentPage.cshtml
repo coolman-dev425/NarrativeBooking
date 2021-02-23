@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "PaymentPage";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div id="checkout">
+    <form action="/books/PaymentPage" method="post" class="table payment-form" id="payment-form">
+        <input type="text" hidden id="bookId" name="bookId" value="@ViewData["BookId"]" />
+        <input type="text" hidden id="paymentIntentId" name="paymentIntentId" value="@ViewData["PaymentIntentId"]" />
+        <p class="instruction">Enter Payment Information</p>
+        <p>By entering your data you agree to our <a target="_blank" href="~/books/ServiceAgreement">Services Agreement</a> and the <a target="_blank" href="https://stripe.com/connect-account/legal">Stripe Payment Services Disclaimer</a>.</p>
+        <section>
+            <h2>Shipping &amp; Billing Information</h2>
+            <fieldset class="with-state payment-page">
+                <label class="payment-page">
+                    <span>Name</span>
+                    <input name="name" class="field" placeholder="John Doe" required="">
+                </label>
+                <label class="payment-page">
+                    <span>Email</span>
+                    <input name="email" type="email" class="field" placeholder="John.Doe@example.com" required="">
+                </label>
+            </fieldset>
+        </section>
+        <section>
+            <h2>Payment Information</h2>
+            <div class="payment-info card visible">
+                <fieldset>
+                    <label class="payment-page">
+                        <span>Cardholder Name</span>
+                        <input type="text" name="name" id="cardholder-name" class="field" placeholder="John Doe" required="">
+                    </label>
+                    <label class="payment-page">
+                        <span>Card</span>
+                        <div id="card-element" class="field StripeElement StripeElement--empty">
+                        </div>
+                    </label>
+                </fieldset>
+            </div>
+        </section>
+        <br />
+        <p>DISCLAIMER: You agree that there are no refunds and to accept the work as is. You agree that Narrativ is in no way legally responsible for the content of the book. You agree that the book is copyrighted and owned by the original author/creator of the work and that you will not share your copy of the work with anyone that has not purchased it as that would constitute distribution and copyright infringement since these purchases are not public property. You also agree that any online posting or other means of making the work available to read and use is copyright infringement. You agree to report this type of activity or any known attempts to transcend these principles to appropriate copyright enforcement authorities as well as sending a certified letter with current email address to:</p>
+        <button class="payment-page" id="card-button" type="button" data-secret="@ViewData["ClientSecret"]">Pay $@ViewData["Price"] </button>
+        @*//TODO: Uncomment this block of code before release*@
+        <button class="payment-page" @*hidden*@ type="submit" id="PaymentPage" value="required">Post Book</button>
+    </form>
+</div>
+<small class="smalls text-margin-left"><a href="~/books/Disclaimer">Disclaimer</a>&nbsp;&nbsp;&nbsp;<a href="~/books/TermsAndConditions">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;<a href="~/books/PrivacyPolicy">Privacy Policy</a></small>
+@section CSS{
+    <link rel="stylesheet" type="text/css" href="~/css/PaymentPage.css">
+}
+
+@section Scripts{
+    <script type="text/javascript">
+    </script>
+}

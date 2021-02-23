@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutPageLoginRegister.cshtml";
+}
+
+<form asp-action="/Account/ForgotPassword" method="post" class="forgotpassword">
+    <div class="black">Please give us your opinion.</div>
+    <div asp-validation-summary="All" class="red-text"></div>
+    <input type="email" class="reg-input" name="Email" placeholder="Email" asp-for="Email" value="@Model.Email" required />
+    <span asp-validation-for="Email" class="red-text"></span>
+    <input type="text" class="reg-input" name="Content" placeholder="Content" asp-for="Content" value="@Model.Content" required />
+    <div class="form-group">
+        <div class="col-md-offset-2 titles">
+            <input type="submit" class="btn dark btn-outline sbold uppercase" value="Send" />
+        </div>
+    </div>
+</form>
+<small class="smalls text-margin-right">
+    <a href="~/books/Disclaimer" class="animation">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+    <a href="~/books/TermsAndConditions" class="animation">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;
+    <a href="~/books/PrivacyPolicy" class="animation">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+    <a href="/Account/ForgotPassword" class="animation">Reset Password</a>
+</small>
